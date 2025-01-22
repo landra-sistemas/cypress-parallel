@@ -1,5 +1,5 @@
 {
-  "name": "cypress-parallel",
+  "name": "@landra_sistemas/cypress-parallel",
   "version": "0.14.0",
   "description": "Reduce up to 40% your Cypress suite execution time parallelizing the test run on the same machine.",
   "main": "cli.js",
