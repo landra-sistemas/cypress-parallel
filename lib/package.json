@@ -5,7 +5,7 @@
   "main": "cli.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tnicola/cypress-parallel.git"
+    "url": "git+https://github.com/landra-sistemas/cypress-parallel.git"
   },
   "keywords": [
     "cypress",
@@ -13,12 +13,23 @@
     "local",
     "sharding"
   ],
-  "author": "Nicola Tommasi",
+  "scripts": {
+    "preversion": "NODE_ENV=development npm i --no-audit --no-fund",
+    "version": "npm run build && git add -A",
+    "postversion": "git push --follow-tags && npm publish --access public",
+    "release:patch": "npm version patch -m \"Bump version %s\"",
+    "release:minor": "npm version minor -m \"Bump version %s\"",
+    "release:major": "npm version major -m \"Bump version %s\"",
+    "release:alpha": "npm version prerelease --preid=alpha -m \"Bump version %s\"",
+    "release:beta": "npm version prerelease --preid=beta -m \"Bump version %s\"",
+    "release:rc": "npm version prerelease --preid=rc -m \"Bump version %s\""
+  },
+  "author": "Landra Sistemas",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tnicola/cypress-parallel/issues"
+    "url": "https://github.com/landra-sistemas/cypress-parallel/issues"
   },
-  "homepage": "https://github.com/tnicola/cypress-parallel#readme",
+  "homepage": "https://github.com/landra-sistemas/cypress-parallel#readme",
   "bin": {
     "cypress-parallel": "./cli.js"
   },
@@ -30,7 +41,7 @@
     "glob-escape": "^0.0.2",
     "is-npm": "^5.0.0",
     "lodash.camelcase": "^4.3.0",
-    "mocha": "~9.2.0",
+    "mocha": "9.2.2",
     "yargs": "15.3.1"
   },
   "peerDependencies": {
