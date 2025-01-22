@@ -1,7 +1,7 @@
 name: ci
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
   workflow_dispatch:
 permissions:
@@ -22,32 +22,31 @@ jobs:
       matrix:
         node: [18, 20, 22]
     steps:
-    - uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node }}
-        cache: 'npm'
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Prepare demo-app
-      run: |
-        cd pizza-demo
-        npm ci
-    - name: Prepare lib
-      run: |
-        cd lib
-        npm ci
-    - name: Prepare root
-      run: |
-        npm ci
-    - name: Execute tests with defaults
-      run: |
-        npm run serve-and-test:parallel
-    - name: Execute only some tests
-      run: |
-        npm run serve-and-test:parallel:some
-    - name: Execute tests with spec reporter
-      run: |
-        npm run serve-and-test:parallel:spec
-    - name: Execute tests with junit reporter
-      run: |
-        npm run serve-and-test:parallel:junit
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Prepare demo-app
+        run: |
+          cd pizza-demo
+          npm ci
+      - name: Prepare lib
+        run: |
+          cd lib
+          npm ci
+      - name: Prepare root
+        run: |
+          npm ci
+      - name: Execute tests with defaults
+        run: |
+          npm run serve-and-test:parallel
+      - name: Execute only some tests
+        run: |
+          npm run serve-and-test:parallel:some
+      - name: Execute tests with spec reporter
+        run: |
+          npm run serve-and-test:parallel:spec
+      - name: Execute tests with junit reporter
+        run: |
+          npm run serve-and-test:parallel:junit
