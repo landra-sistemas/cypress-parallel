@@ -30,14 +30,14 @@ jobs:
       - name: Prepare demo-app
         run: |
           cd pizza-demo
-          npm ci
+          npm ci --no-audit --no-fund
       - name: Prepare lib
         run: |
           cd lib
-          npm ci
+          npm ci --no-audit --no-fund
       - name: Prepare root
         run: |
-          npm ci
+          npm ci --no-audit --no-fund
       - name: Execute tests with defaults
         run: |
           npm run serve-and-test:parallel
