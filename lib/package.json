@@ -33,6 +33,9 @@
   "bin": {
     "cypress-parallel": "./cli.js"
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "cli-table3": "^0.6.5",
     "@colors/colors": "1.6.0",
