@@ -43,6 +43,13 @@
     "mocha": "11.7.5",
     "yargs": "15.3.1"
   },
+  "overrides": {
+    "diff": "9.0.0",
+    "glob": "13.0.6",
+    "js-yaml": "4.1.1",
+    "lodash": "4.18.1",
+    "serialize-javascript": "7.0.5"
+  },
   "peerDependencies": {
     "cypress-multi-reporters": "2.0.5"
   }
