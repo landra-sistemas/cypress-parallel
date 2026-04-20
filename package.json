@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/landra-sistemas/cypress-parallel#readme",
   "dependencies": {
-    "cypress": "15.14.0",
+    "cypress": "13.17.0",
     "cypress-multi-reporters": "2.0.5",
     "@landra_sistemas/cypress-parallel": "file:lib",
     "is-npm": "6.1.0",
